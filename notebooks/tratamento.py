@@ -22,12 +22,13 @@ filmes_completos = pd.concat([filmes_df, generos_dummies], axis=1)
 # Criando um dicionário que diz: "Para os gêneros use o máximo (1), para o rating use média e contagem"
 agregacoes = {col: 'max' for col in generos_dummies.columns}
 agregacoes['rating'] = ['mean', 'count']
+agregacoes['filmeId'] = 'first'
 
 # Criando a tabela final agrupada por título
 filmes_final = filmes_completos.groupby('titulo').agg(agregacoes).reset_index()
 
 # 5. Achatando as colunas
-filmes_final.columns = ['titulo'] + list(generos_dummies.columns) + ['nota_media', 'total_votos']
+filmes_final.columns = ['titulo'] + list(generos_dummies.columns) + ['nota_media', 'total_votos', 'filmeId']
 
 # 6. Filtro de Relevância e Ordenação
 filmes_populares = filmes_final[filmes_final['total_votos'] > 50].copy()
