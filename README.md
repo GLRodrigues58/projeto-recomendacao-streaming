@@ -16,10 +16,17 @@ O objetivo principal foi transformar dados brutos de streaming em uma estrutura 
 * Processamento eficiente de um dataset volumoso (MovieLens).
 * Criação de uma matriz de 23 colunas representando a "identidade" de cada filme.
 * Implementação de filtros de relevância para garantir a qualidade das recomendações (mínimo de 50 avaliações).
+* Processamento em Larga Escala: Conversão de DataFrames para Matrizes Esparsas (CSR) usando SciPy, reduzindo drasticamente o uso de memória RAM.
+* Algoritmo de Recomendação: Implementação da Similaridade de Cosseno (Scikit-Learn) para calcular a afinidade entre filmes.
+* Busca Inteligente: Função de busca por títulos com tratamento de strings e mapeamento de IDs.
+
+  <img width="996" height="469" alt="image" src="https://github.com/user-attachments/assets/1fdc5c86-8d16-459d-871a-4e243fc83881" />
+
 
 ## 🚀 Próximos Passos
-- [ ] Implementação da Similaridade de Cosseno para o cálculo de recomendação.
 - [ ] Finalização da interface interativa no Streamlit.
+<img width="1600" height="896" alt="image" src="https://github.com/user-attachments/assets/b0ad5cb5-8cf7-4e40-887e-d7e1f763cbfc" />
+
 
 ---
 **Desenvolvido por Guilherme Rodrigues** [LinkedIn](https://www.linkedin.com/in/guilherme584rodrigues/) | [GitHub](https://github.com/GLRodrigues58)
