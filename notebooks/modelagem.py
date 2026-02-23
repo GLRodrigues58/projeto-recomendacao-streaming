@@ -22,7 +22,7 @@ def buscar_index_filme(nome_busca, df_titulos):
     Busca o filmeId baseado em um trecho do nome informado pelo usuário.
     """
     # Filtra usando a coluna 'titulo'
-    resultados = df_titulos[df_titulos['titulo'].str.contains(nome_busca, case=False, na=False)]
+    resultados = df_titulos[df_titulos['titulo'].str.contains(nome_busca, case=False, na=False, regex=False)]
 
     if resultados.empty:
         print(f'Filme "{nome_busca}" não encontrado.')
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # Caminhos dinâmicos
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
     caminho_ratings = os.path.join(diretorio_atual, '..', 'data', 'rating.csv')
-    caminho_titulos = os.path.join(diretorio_atual, '..', 'data', 'conferindo_dummies.csv')
+    caminho_titulos = os.path.join(diretorio_atual, '..', 'data', '../data/conferindo_dummies.csv')
 
     try:
         # 1. Carregar títulos tratados (Dicionário de Filmes)
@@ -95,7 +95,7 @@ if __name__ == "__main__":
         matriz, dataframe_pivot = criar_matriz_esparsa_com_df(df_notas_filtrado)
 
         # 5. Teste Prático
-        recomendar_filmes("Toy Story", df_titulos, matriz, dataframe_pivot)
+        recomendar_filmes("Toy Story 3 (2010)", df_titulos, matriz, dataframe_pivot)
 
     except FileNotFoundError as e:
         print(f"❌ Erro: Arquivo não encontrado. Verifique a pasta 'data'. Detalhe: {e}")
