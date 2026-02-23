@@ -31,7 +31,7 @@ filmes_final = filmes_completos.groupby('titulo').agg(agregacoes).reset_index()
 filmes_final.columns = ['titulo'] + list(generos_dummies.columns) + ['nota_media', 'total_votos', 'filmeId']
 
 # 6. Filtro de Relevância e Ordenação
-filmes_populares = filmes_final[filmes_final['total_votos'] > 50].copy()
+filmes_populares = filmes_final[filmes_final['total_votos'] > 500].copy()
 filmes_populares.sort_values(by='nota_media', ascending=False, inplace=True)
 
 print("✅ Tabela Final com Gêneros e Métricas:")
