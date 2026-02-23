@@ -15,6 +15,7 @@ A arquitetura foi pautada em **eficiência computacional** e **escalabilidade**:
 * **SciPy (Sparse Matrices):** Decisão crítica para viabilizar o projeto. Matrizes densas de interação consumiriam >10GB de RAM. A conversão para **CSR Matrix** reduziu drasticamente a pegada de memória.
 * **Cosine Similarity (Sklearn):** Algoritmo utilizado para calcular a proximidade vetorial entre os itens da matriz.
 * **Streamlit:** Framework utilizado para o deploy da interface, garantindo uma experiência de usuário (UX) fluida e interativa.
+* **Dataset Original:** https://www.kaggle.com/datasets/grouplens/movielens-20m-dataset
 
 ## 🚀 3. Desafios de Engenharia & Maturidade Técnica
 O desenvolvimento envolveu a superação de gargalos técnicos reais:
